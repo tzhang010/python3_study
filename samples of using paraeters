@@ -33,11 +33,11 @@ print(enroll('Mike', 'Male'))
 print(enroll('Zhang', 'Male', 30))
 print(enroll('Hinata', 'Female', city='Tokyo'))
 
-# use IMMUTABLE PARAMETERS when you don't know how many parameters would be 
+# use MUTABLE PARAMETERS when you don't know how many parameters would be 
 # entered when the function is called. After using * , the parameter receives
 # a tuple and use the tuple in calculation when the function is called.
-# for example: calaulating a^2 + b^2 + ...
 
+# for example: calaulating a^2 + b^2 + ...
 def cal_old(numbers):
 	sum = 0
 	for n in numbers:
@@ -50,4 +50,9 @@ def cal_new(*numbers):
 	for n in numbers:
 		sum += n*n
 	return sum
-print(cal_new(1,2,3)
+print(cal_new(1, 2, 3))
+
+# use a list as the mutable parameter:
+list_a = [2, 3, 4]
+print(cal_new(*list_a))
+
