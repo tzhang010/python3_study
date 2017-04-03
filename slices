@@ -1,0 +1,18 @@
+L1 = list(range(100))
+print(L1[0:10])
+print(L1[:10])
+print(L1[-10:])
+print(L1[-10:-1])    # this do not include the last value of the list
+print(L1[-10:1])
+
+L2 = range(100)
+print(L2[0:10:2])
+print(L2[:10:2])
+print(L2[::5])
+print(L2[:])
+
+L3 = tuple(range(100))
+print(L3[0:10:2])
+print(L3[:10:2])
+print(L3[::5])
+print(L3[:])
