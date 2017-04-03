@@ -1,0 +1,19 @@
+# 2. use DEFAULT PARAMETERS to show data efficiently, when you need to call the 
+# function, just fill in the necessary parameters. If you don't fill the 
+# parameters in order, then you need to enter the name of the parameter. 
+# NOTE that we need to add " city = 'Tokyo'" in line 33.
+
+# NOTE that the default parameters MUST be pointed to immutable objects, 
+# otherwise they may be changed after call and you'll get mistakes afterwards.
+
+def enroll(name, gender, age=20, city='Beijing'):
+	print('yes')
+	print('name:', name)
+	print('gender:', gender)
+	print('age:', age)
+	print('city:', city)
+	print()
+	return
+print(enroll('Mike', 'Male'))
+print(enroll('Zhang', 'Male', 30))
+print(enroll('Hinata', 'Female', city='Tokyo'))
