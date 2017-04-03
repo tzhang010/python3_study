@@ -1,4 +1,4 @@
-# 3. use MUTABLE PARAMETERS when you don't know how many parameters would be 
+# use MUTABLE PARAMETERS when you don't know how many parameters would be 
 # entered when the function is called. After using * , the parameter receives
 # a tuple and use the tuple in calculation when the function is called.
 
