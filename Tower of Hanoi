@@ -1,4 +1,14 @@
-# Notice that we need 'return' or 'else' after the 'if' sentense, otherwise
+# Note that the iteration in computer is basicly mathematical inductions.
+# Therefore, we can derive the codes in three steps:
+# 1. Write down the function, see whether we need an equivalent operation or
+# equivalent value. For example, in Hanoi game, we need an equivalent operation
+# and in Fibonacci series, we need an equivalent value. Therefore, we need several
+# iterative functions inside the def function instead of return values in the 
+# former function, and we need a return value that equals to f(n-1)+f(n-2) in 
+# the latter function.
+
+# Hanoi:
+# Note that we need 'return' or 'else' after the 'if' sentense, otherwise
 # the computer will continue to calculate when n-1 = 0 and occurs a exceeding
 # problem.
 
@@ -6,9 +16,9 @@ def move(n, a, b, c):
 	if n == 1:
 		print('%s --> %s' % (a, c))
 		return
-	(move(n-1, a, c, b))
-	(move(1, a, b, c))
-	(move(n-1, b, a, c))
+	move(n-1, a, c, b)
+	move(1, a, b, c)
+	move(n-1, b, a, c)
 move(3,'A','B','C')
 
 # Or:
@@ -16,7 +26,28 @@ def move(n, a, b, c):
 	if n == 1:
 		print('%s --> %s' % (a, c))
 	else:
-		(move(n-1, a, c, b))
-		(move(1, a, b, c))
-		(move(n-1, b, a, c))
+		move(n-1, a, c, b)
+		move(1, a, b, c)
+		move(n-1, b, a, c)
 move(3,'A','B','C')
+
+# error function:
+def move(n, a, b, c):
+	if n == 1:
+		print('%s --> %s' % (a, c))
+	(move(n-1, a, c, b))
+	(move(1, a, b, c))
+	(move(n-1, b, a, c))
+move(3,'A','B','C')
+
+# Fibonacci:
+def Fib(n):
+	if n==1:
+		return 1
+	if n==2:
+		return 1
+	else:
+		return (Fib(n-1)+Fib(n-2))
+n = input('enter n\n')
+n = int (n)
+print('the number', n, 'th Fibonacci number is:', Fib(n))
