@@ -1,4 +1,4 @@
-# 4. Use KEYWORD PARAMETERS when you need a dict with mutable numbers of
+# Use KEYWORD PARAMETERS when you need a dict with mutable numbers of
 # parameters. Use NAMED KEYWORD PARAETERS when you need to make sure that
 # the function only receives certain keyword parameters.
 def f1(a, b, c=0, *args, **kw):
