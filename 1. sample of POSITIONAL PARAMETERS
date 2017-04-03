@@ -1,4 +1,4 @@
-# 1. use POSITIOAL PARAMETERS to calculate n to the power of x:
+# use POSITIOAL PARAMETERS to calculate n to the power of x:
 def exponent_origin(base, exp):
 	origin = 1
 	for exp in range(exp):
