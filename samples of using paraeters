@@ -15,10 +15,9 @@ print(exponent_origin(base,exp))
 # 2. use DEFAULT PARAMETERS to show data efficiently, when you need to call the 
 # function, just fill in the necessary parameters. If you don't fill the 
 # parameters in order, then you need to enter the name of the parameter. 
+# NOTE that we need to add " city = 'Tokyo'" in line 33.
 
-# NOTICE the " city = 'Tokyo'" in line 34.
-
-# NOTICE that the default parameters MUST be pointed to immutable objects, 
+# NOTE that the default parameters MUST be pointed to immutable objects, 
 # otherwise they may be changed after call and you'll get mistakes afterwards.
 
 def enroll(name, gender, age=20, city='Beijing'):
@@ -50,9 +49,41 @@ def cal_new(*numbers):
 	for n in numbers:
 		sum += n*n
 	return sum
-print(cal_new(1, 2, 3))
+print(cal_new(1, 2, 3))		# In this situation, numbers is a tuple.
 
-# use a list as the mutable parameter:
-list_a = [2, 3, 4]
+# use a list or a tuple as the mutable parameter:
+list_a = (2, 3, 4)
 print(cal_new(*list_a))
+list_b = [2,3,4]
+print(cal_new(*list_b))
 
+# Use KEYWORD PARAMETERS when you need a dict with mutable numbers of
+# parameters. Use NAMED KEYWORD PARAETERS when you need to make sure that
+# the function only receives certain keyword parameters.
+def f1(a, b, c=0, *args, **kw):
+    print('a =', a, 
+		'b =', b, 
+		'c =', c, 
+		'd =', d,
+		'args =', args, 
+		'kw =', kw
+		)
+
+def f2(a, b, c=0, *, d, e,  **kw):
+    print('a =', a, 
+		'b =', b, 
+		'c =', c, 
+		'd =', d,
+		'e =', e,
+		'kw =', kw
+		)
+
+f1(1,2)
+f1(1,2,3,'a','b',x = 99,y = 100)
+f1(1,2,'a','b',x = 99,y = 100)		# Note that in this case, the output is:
+# a = 1 b = 2 c = a d = b args = ('b',) kw = {'x': 99, 'y': 100}
+# which means when the default parameter is in front of mutable parameter, the
+# default parameter will be set as the values of hte mutable parameter.
+
+f2(1,2,d = 99, ext = None, logo = 'Yes!')
+f2(1,2,d = 99, e = 100, ext = None, logo = 'Yes!')
