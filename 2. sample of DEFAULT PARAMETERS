@@ -1,4 +1,4 @@
-# 2. use DEFAULT PARAMETERS to show data efficiently, when you need to call the 
+# use DEFAULT PARAMETERS to show data efficiently, when you need to call the 
 # function, just fill in the necessary parameters. If you don't fill the 
 # parameters in order, then you need to enter the name of the parameter. 
 # NOTE that we need to add " city = 'Tokyo'" in line 33.
