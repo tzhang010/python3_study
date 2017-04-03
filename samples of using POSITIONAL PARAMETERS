@@ -1,0 +1,44 @@
+# 1. use POSITIOAL PARAMETERS to calculate n to the power of x:
+def exponent_origin(base, exp):
+	origin = 1
+	for exp in range(exp):
+		origin = origin * base
+	return origin
+
+base = input('please enter the base number\n')
+exp = input('please enter the exponent number\n')
+base = int(base)
+exp = int(exp)
+
+print(exponent_origin(base,exp))
+
+# Use KEYWORD PARAMETERS when you need a dict with mutable numbers of
+# parameters. Use NAMED KEYWORD PARAETERS when you need to make sure that
+# the function only receives certain keyword parameters.
+def f1(a, b, c=0, *args, **kw):
+    print('a =', a, 
+		'b =', b, 
+		'c =', c, 
+		'd =', d,
+		'args =', args, 
+		'kw =', kw
+		)
+
+def f2(a, b, c=0, *, d, e,  **kw):
+    print('a =', a, 
+		'b =', b, 
+		'c =', c, 
+		'd =', d,
+		'e =', e,
+		'kw =', kw
+		)
+
+f1(1,2)
+f1(1,2,3,'a','b',x = 99,y = 100)
+f1(1,2,'a','b',x = 99,y = 100)		# Note that in this case, the output is:
+# a = 1 b = 2 c = a d = b args = ('b',) kw = {'x': 99, 'y': 100}
+# which means when the default parameter is in front of mutable parameter, the
+# default parameter will be set as the values of hte mutable parameter.
+
+f2(1,2,d = 99, ext = None, logo = 'Yes!')
+f2(1,2,d = 99, e = 100, ext = None, logo = 'Yes!')
